@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+@using System.Xml;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Relatorio XML</title>
+</head>
+<body>
+    <div>
+        @{
+            string sCaminho = Server.MapPath("~/App_Data/Alunos.xml");
+            
+            XmlDocument Doc = new XmlDocument();
+            Doc.Load(sCaminho);
+
+            // XmlNodeList Lista = Doc.GetElementsByTagName("aluno");
+
+            // XPath : Expressao que navega dentro do XML
+            // XSLT : Estrutura
+
+            XmlNodeList Lista = 
+                Doc.SelectNodes("/Alunos/aluno[codigo=" + 
+                                ViewBag.Cod.ToString() + "]");
+                        
+            string sNomes = "";
+
+            foreach (XmlNode Aluno in Lista)
+            {
+              sNomes += Aluno["nome"].InnerText;
+            }
+
+        }
+
+        <div>Alunos: @sNomes </div>
+
+    </div>
+</body>
+</html>

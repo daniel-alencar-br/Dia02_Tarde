@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Alunos>
+  <aluno>
+    <codigo>1</codigo>
+    <nome>Joao</nome>
+  </aluno>
+  <aluno>
+    <codigo>2</codigo>
+    <nome>Maria</nome>
+  </aluno>
+  <aluno>
+    <codigo>3</codigo>
+    <nome>Carlos</nome>  
+  </aluno>
+  <aluno>
+    <codigo>4</codigo>
+    <nome>Marlene</nome>
+  </aluno>
+</Alunos>
